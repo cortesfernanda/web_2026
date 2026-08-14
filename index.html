@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Desde el Código | Presentación</title>
+    <meta name="description" content="Portafolio profesional de desarrollo web y diseño de interfaces. Creación de aplicaciones interactivas con tecnologías modernas y estética premium.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <!-- Rayos de Sol Submarinos (Caustics) -->
+    <div id="sunlight-rays"></div>
+
+    <!-- Fondo de Partículas Dinámico -->
+    <div id="hero-canvas-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo" id="nav-logo">
+                Fernanda Cortés
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="nav-link active" id="link-inicio">Inicio</a></li>
+                <li class="nav-item"><a href="#sobre-mi" class="nav-link" id="link-sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a href="#proyectos" class="nav-link" id="link-proyectos">Proyectos</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link btn-contact" id="link-contacto">Contacto</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero (Inicio) -->
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">
+                Fernanda Cortés
+            </h1>
+            <p class="hero-subtitle" id="hero-subtitle">
+                <strong>Estudiante de Diseño</strong> · Escuela de Arquitectura y Diseño PUCV<br><br>
+                Me interesan las experiencias digitales e interactivas y el diseño industrial.
+            </p>
+            <div class="hero-actions">
+                <a href="#proyectos" class="btn btn-primary" id="btn-hero-projects">
+                    Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contacto" class="btn btn-secondary" id="btn-hero-contact">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Sobre Mí y Habilidades (Simplificada y sin cajas) -->
+    <section id="sobre-mi" class="about-section section-padding">
+        <div class="container">
+            <div class="about-clean-grid">
+                <!-- Columna Sobre Mí -->
+                <div class="about-text">
+                    <h2 class="about-title">Sobre mí</h2>
+                    <p>
+                        Estudiante de Diseño en la Escuela de Arquitectura y Diseño de la Pontificia Universidad Católica de Valparaíso (PUCV).
+                    </p>
+                    <p>
+                        Me interesan las experiencias digitales e interactivas y el diseño industrial, explorando la relación entre el usuario, el objeto y la interfaz a través de la investigación y la experimentación material y digital.
+                    </p>
+                </div>
+
+                <!-- Columna Habilidades -->
+                <div class="skills-clean">
+                    <h2 class="about-title">Habilidades</h2>
+                    <p class="skills-intro">Tecnologías y herramientas que utilizo para dar vida a las ideas:</p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Prototipado Interactivo</span>
+                        <span class="skill-tag">Diseño de Interfaces</span>
+                        <span class="skill-tag">Modelado 3D</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">HTML / CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">GitHub Pages</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">p5.js</span>
+                        <span class="skill-tag">InDesign</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos (Simplificada sin pestañas de filtro) -->
+    <section id="proyectos" class="projects-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Proyectos</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <!-- Grid de Proyectos Simplificado sin cajas pesadas -->
+            <div class="projects-grid-clean">
+                <!-- Proyecto 1 -->
+                <div class="project-card-clean">
+                    <a href="https://cortesfernanda.github.io/sitio_web_IE/" target="_blank" class="project-image-link">
+                        <div class="project-image-wrapper-clean project-grad-1">
+                            <img src="assets/project1.png" alt="Sitio Web IE" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://cortesfernanda.github.io/sitio_web_IE/" target="_blank">Sitio Web IE</a>
+                        </h3>
+                        <p class="project-description-clean">Página web y repositorio de encargos de Imagen Escrita 2024.</p>
+                        <div class="project-tags-clean">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card-clean">
+                    <a href="https://cortesfernanda.github.io/Cuadriculando_FernandaCortes/" target="_blank" class="project-image-link">
+                        <div class="project-image-wrapper-clean project-grad-2">
+                            <img src="assets/project2.png" alt="Cuadriculando" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://cortesfernanda.github.io/Cuadriculando_FernandaCortes/" target="_blank">Cuadriculando</a>
+                        </h3>
+                        <p class="project-description-clean">Sitio web e interfaz interactiva realizada en el Taller de Diseño de Interacción 2026.</p>
+                        <div class="project-tags-clean">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card-clean">
+                    <a href="https://editor.p5js.org/FernandaCortes/full/8elTo3p3l" target="_blank" class="project-image-link">
+                        <div class="project-image-wrapper-clean project-grad-3">
+                            <img src="assets/project3.png" alt="Imagen Escrita 2024" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://editor.p5js.org/FernandaCortes/full/8elTo3p3l" target="_blank">Imagen Escrita 2024</a>
+                        </h3>
+                        <p class="project-description-clean">Proyecto de código creativo e interactivo diseñado para la Exposición Imagen Escrita 2024.</p>
+                        <div class="project-tags-clean">
+                            <span>p5.js</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto (Sin cajas de texto) -->
+    <section id="contacto" class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-clean-content">
+                <span class="contact-subtle-title">Contacto</span>
+                <div class="contact-single-line">
+                    <a href="mailto:fernanda.cortes.v@mail.pucv.cl" class="contact-single-link">fernanda.cortes.v@mail.pucv.cl</a>
+                    <span class="contact-divider">/</span>
+                    <a href="https://wiki.ead.pucv.cl/Fernanda_Cort%C3%A9s" target="_blank" class="contact-single-link">Wiki Casiopea</a>
+                    <span class="contact-divider">/</span>
+                    <a href="https://github.com/cortesfernanda" target="_blank" class="contact-single-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-minimal">
+                <p>&copy; 2026 Fernanda Cortés — Diseño.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
