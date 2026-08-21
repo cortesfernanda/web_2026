@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Desde el Código | Presentación</title>
-    <meta name="description" content="Portafolio profesional de desarrollo web y diseño de interfaces. Creación de aplicaciones interactivas con tecnologías modernas y estética premium.">
+    <title>Fernanda Cortés | Sobre mí</title>
+    <meta name="description" content="Sobre mí - Estudiante de Diseño en la Escuela de Arquitectura y Diseño PUCV. Intereses en experiencias digitales, interactivas y diseño industrial.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,27 +14,28 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+
     <!-- Rayos de Sol Submarinos (Caustics) - Se oculta a lectores de pantalla (aria-hidden="true") porque es un efecto puramente decorativo -->
     <div id="sunlight-rays" aria-hidden="true"></div>
 
-    <!-- Fondo de Partículas Dinámico - Ocultado a lectores de pantalla para que no cause interferencia visual o auditiva -->
+    <!-- Fondo de Partículas Dinámico - Ocultado a lectores de pantalla para evitar interferencias -->
     <div id="hero-canvas-container" aria-hidden="true">
         <canvas id="hero-canvas"></canvas>
     </div>
 
-    <!-- Barra de Navegación Principal - Definimos role="navigation" y aria-label para describir su propósito -->
+    <!-- Barra de Navegación Principal - Con etiqueta de accesibilidad role="navigation" -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
-            <!-- Logotipo / Enlace que lleva al inicio de la página -->
+            <!-- Logotipo / Enlace al inicio -->
             <a href="index.html" class="logo" id="nav-logo" aria-label="Fernanda Cortés - Volver al Inicio">
                 Fernanda Cortés
             </a>
             
-            <!-- Lista ordenada de enlaces de navegación -->
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active" id="link-inicio">Inicio</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link" id="link-inicio">Inicio</a></li>
                 <li class="nav-item"><a href="proyectos.html" class="nav-link" id="link-proyectos">Proyectos</a></li>
-                <li class="nav-item"><a href="sobre-mi.html" class="nav-link" id="link-sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a href="sobre-mi.html" class="nav-link active" id="link-sobre-mi">Sobre mí</a></li>
                 <li class="nav-item"><a href="contacto.html" class="nav-link btn-contact" id="link-contacto">Contacto</a></li>
             </ul>
 
@@ -47,28 +48,54 @@
         </div>
     </nav>
 
-    <!-- Sección Hero (Inicio) -->
-    <header id="inicio" class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title" id="hero-title">
-                Fernanda Cortés
-            </h1>
-            <p class="hero-subtitle" id="hero-subtitle">
-                <strong>Estudiante de Diseño</strong> · Escuela de Arquitectura y Diseño PUCV<br><br>
-                Me interesan las experiencias digitales e interactivas y el diseño industrial.
-            </p>
-            <div class="hero-actions">
-                <a href="proyectos.html" class="btn btn-primary" id="btn-hero-projects">
-                    Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="contacto.html" class="btn btn-secondary" id="btn-hero-contact">Contacto</a>
+    <!-- Sección Sobre Mí y Habilidades - Estructura semántica utilizando la etiqueta <section> con su identificador correspondiente -->
+    <section id="sobre-mi" class="about-section section-padding">
+        <div class="container">
+            <!-- Grilla limpia en dos columnas (definida mediante CSS Grid) -->
+            <div class="about-clean-grid">
+                <!-- Columna Izquierda: Información de presentación personal (Sobre mí) -->
+                <div class="about-text">
+                    <h2 class="about-title">
+                        <svg class="title-icon-coral" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12,22 L12,14 M12,17 C12,15 14,14 15,12 C16,10 15.5,8 15.5,8 M15,10 C15,9 13.5,8.5 13.5,7 M12,15 C12,13 10,12.5 9,11 C8,9.5 8.5,7.5 8.5,7 M9,9 C9,8 10.5,7.5 10.5,6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        Sobre mí
+                    </h2>
+                    <p>
+                        Estudiante de Diseño en la Escuela de Arquitectura y Diseño de la Pontificia Universidad Católica de Valparaíso (PUCV).
+                    </p>
+                    <p>
+                        Me interesan las experiencias digitales e interactivas y el diseño industrial, explorando la relación entre el usuario, el objeto y la interfaz a través de la investigación y la experimentación material y digital.
+                    </p>
+                </div>
+
+                <!-- Columna Derecha: Lista de Habilidades y Tecnologías -->
+                <div class="skills-clean">
+                    <h2 class="about-title">
+                        <svg class="title-icon-coral" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12,22 L12,14 M12,17 C12,15 14,14 15,12 C16,10 15.5,8 15.5,8 M15,10 C15,9 13.5,8.5 13.5,7 M12,15 C12,13 10,12.5 9,11 C8,9.5 8.5,7.5 8.5,7 M9,9 C9,8 10.5,7.5 10.5,6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        Habilidades
+                    </h2>
+                    <p class="skills-intro">Tecnologías y herramientas que utilizo para dar vida a las ideas:</p>
+                    <!-- Contenedor flex-wrap para organizar las burbujas orgánicas de habilidades -->
+                    <div class="skills-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Prototipado Interactivo</span>
+                        <span class="skill-tag">Diseño de Interfaces</span>
+                        <span class="skill-tag">Modelado 3D</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">HTML / CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">GitHub Pages</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">p5.js</span>
+                        <span class="skill-tag">InDesign</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-
-
-
-
+    </section>
 
     <!-- Corales Decorativos Interactivos en las esquinas inferiores (aria-hidden para lectores de pantalla) -->
     <svg class="decor-coral bottom-right" viewBox="0 0 120 180" aria-hidden="true">

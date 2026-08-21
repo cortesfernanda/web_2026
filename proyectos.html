@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda Cortés | Proyectos</title>
+    <meta name="description" content="Proyectos - Trabajos interactivos en diseño de interfaces y código creativo realizados por Fernanda Cortés.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Rayos de Sol Submarinos (Caustics) - Se oculta a lectores de pantalla (aria-hidden="true") porque es un efecto puramente decorativo -->
+    <div id="sunlight-rays" aria-hidden="true"></div>
+
+    <!-- Fondo de Partículas Dinámico - Ocultado a lectores de pantalla para evitar interferencias -->
+    <div id="hero-canvas-container" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <!-- Barra de Navegación Principal - Con etiqueta de accesibilidad role="navigation" -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <!-- Logotipo / Enlace al inicio -->
+            <a href="index.html" class="logo" id="nav-logo" aria-label="Fernanda Cortés - Volver al Inicio">
+                Fernanda Cortés
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link" id="link-inicio">Inicio</a></li>
+                <li class="nav-item"><a href="proyectos.html" class="nav-link active" id="link-proyectos">Proyectos</a></li>
+                <li class="nav-item"><a href="sobre-mi.html" class="nav-link" id="link-sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link btn-contact" id="link-contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botón de Menú Hamburguesa accesible mediante teclado -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sección Proyectos (Simplificada sin pestañas de filtro) -->
+    <section id="proyectos" class="projects-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="title-icon-jelly" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12,2 C7.58,2 4,5.58 4,10 C4,10.5 4.5,11 5,11 C5.5,11 6,10.5 6,10 C6,6.69 8.69,4 12,4 C15.31,4 18,6.69 18,10 C18,10.5 18.5,11 19,11 C19.5,11 20,10.5 20,10 C20,5.58 16.42,2 12,2 Z" fill="currentColor"/>
+                        <path d="M12,11 C9.5,11 8.5,13 8.5,14 C8.5,15.5 10,16 10,17.5 C10,19 9,20 9,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12,11 C12,13 12,13.5 12,15 C12,16.5 13,17 13,18 C13,19 12,20 12,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12,11 C14.5,11 15.5,13 15.5,14 C15.5,15.5 14,16 14,17.5 C14,19 15,20 15,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Proyectos
+                </h2>
+                <div class="header-line"></div>
+            </div>
+
+            <!-- Grid de Proyectos Simplificado (responsivo de 3 columnas) -->
+            <div class="projects-grid-clean">
+                <!-- Proyecto 1 -->
+                <div class="project-card-clean">
+                    <!-- Enlace de imagen accesible con lector de pantalla (aria-label explica qué abre y que es pestaña nueva) -->
+                    <a href="https://cortesfernanda.github.io/sitio_web_IE/" target="_blank" class="project-image-link" aria-label="Ver el sitio web del proyecto Sitio Web IE (abre en una nueva pestaña)">
+                        <div class="project-image-wrapper-clean project-grad-1">
+                            <img src="assets/project1.png" alt="Captura de pantalla de la interfaz de Sitio Web IE" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://cortesfernanda.github.io/sitio_web_IE/" target="_blank" aria-label="Ir al sitio web de Sitio Web IE (abre en una nueva pestaña)">Sitio Web IE</a>
+                        </h3>
+                        <p class="project-description-clean">Página web y repositorio de encargos de Imagen Escrita 2024.</p>
+                        <div class="project-tags-clean">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card-clean">
+                    <a href="https://cortesfernanda.github.io/Cuadriculando_FernandaCortes/" target="_blank" class="project-image-link" aria-label="Ver el sitio web del proyecto Cuadriculando (abre en una nueva pestaña)">
+                        <div class="project-image-wrapper-clean project-grad-2">
+                            <img src="assets/project2.png" alt="Captura de pantalla de la interfaz de Cuadriculando" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://cortesfernanda.github.io/Cuadriculando_FernandaCortes/" target="_blank" aria-label="Ir al sitio web de Cuadriculando (abre en una nueva pestaña)">Cuadriculando</a>
+                        </h3>
+                        <p class="project-description-clean">Sitio web e interfaz interactiva realizada en el Taller de Diseño de Interacción 2026.</p>
+                        <div class="project-tags-clean">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card-clean">
+                    <a href="https://editor.p5js.org/FernandaCortes/full/8elTo3p3l" target="_blank" class="project-image-link" aria-label="Ver demostración a pantalla completa de Imagen Escrita 2024 (abre en una nueva pestaña)">
+                        <div class="project-image-wrapper-clean project-grad-3">
+                            <img src="assets/project3.png" alt="Demostración visual interactiva de Imagen Escrita 2024" class="project-image-clean" onerror="this.style.display='none'">
+                        </div>
+                    </a>
+                    <div class="project-info-clean">
+                        <span class="project-category-clean">Diseño de Código</span>
+                        <h3 class="project-title-clean">
+                            <a href="https://editor.p5js.org/FernandaCortes/full/8elTo3p3l" target="_blank" aria-label="Ir al editor interactivo de Imagen Escrita 2024 (abre en una nueva pestaña)">Imagen Escrita 2024</a>
+                        </h3>
+                        <p class="project-description-clean">Proyecto de código creativo e interactivo diseñado para la Exposición Imagen Escrita 2024.</p>
+                        <div class="project-tags-clean">
+                            <span>p5.js</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medusa Decorativa Interactiva (Cobalto) - Oculta a lectores de pantalla (aria-hidden="true") por ser un gráfico puramente estético -->
+            <div class="projects-decor-container" aria-hidden="true">
+                <div class="jellyfish-cobalt">
+                    <span class="tentacle t1"></span>
+                    <span class="tentacle t2"></span>
+                    <span class="tentacle t3"></span>
+                    <span class="tentacle t4"></span>
+                    <span class="tentacle t5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corales Decorativos Interactivos en las esquinas inferiores (aria-hidden para lectores de pantalla) -->
+    <svg class="decor-coral bottom-right" viewBox="0 0 120 180" aria-hidden="true">
+        <path d="M60,180 C60,150 50,130 50,110 C50,90 40,75 35,60 C30,45 35,30 30,15 C28,10 22,10 25,18 C28,26 25,40 30,55 C35,70 42,85 45,100 M50,110 C55,100 68,90 70,75 C72,60 68,45 75,30 C82,15 90,8 92,15 C94,22 84,35 80,50 C76,65 72,80 65,95 M58,140 C70,130 85,120 90,105 C95,90 92,75 100,60 C108,45 115,35 117,42 C119,49 110,60 102,75 C94,90 92,105 82,120 M52,155 C40,145 28,135 25,120 C22,105 25,90 18,75 C11,60 2,50 5,55 C8,60 15,75 20,90 C25,105 28,120 38,135" fill="none" stroke="url(#coral-grad-decor)" stroke-width="2.5" stroke-linecap="round"/>
+        <defs>
+            <linearGradient id="coral-grad-decor" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(0, 180, 216, 0.15)"/>
+                <stop offset="50%" stop-color="rgba(144, 224, 239, 0.6)"/>
+                <stop offset="100%" stop-color="rgba(0, 180, 216, 0.8)"/>
+            </linearGradient>
+        </defs>
+    </svg>
+    <svg class="decor-coral bottom-left" viewBox="0 0 100 150" aria-hidden="true">
+        <path d="M50,150 C50,120 58,105 58,90 C58,75 66,60 62,45 C58,30 65,15 62,5 C60,0 54,3 55,10 C56,17 50,30 52,45 C54,60 48,75 45,90 M52,105 C42,95 32,85 30,70 C28,55 35,40 32,25 C29,10 20,5 22,12 C24,19 30,32 28,47 C26,62 32,77 42,92 M55,125 C65,115 78,105 82,90 C86,75 80,60 88,45 C96,30 102,20 104,26 C106,32 98,42 90,57 C82,72 80,87 70,102" fill="none" stroke="url(#coral-grad-decor-left)" stroke-width="2.5" stroke-linecap="round"/>
+        <defs>
+            <linearGradient id="coral-grad-decor-left" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(0, 180, 216, 0.15)"/>
+                <stop offset="50%" stop-color="rgba(144, 224, 239, 0.5)"/>
+                <stop offset="100%" stop-color="rgba(72, 202, 228, 0.7)"/>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-minimal">
+                <p>&copy; 2026 Fernanda Cortés — Diseño.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

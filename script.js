@@ -1,66 +1,75 @@
 /* ==========================================================================
-   LÓGICA E INTERACTIVIDAD
+   LÓGICA E INTERACTIVIDAD PRINCIPAL (JavaScript)
    ========================================================================== */
 
+// Este evento 'DOMContentLoaded' se ejecuta de forma automática en cuanto el navegador
+// termina de leer todo el documento HTML, asegurando que los elementos ya existan en pantalla.
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar todas las funcionalidades activas
-    initCanvasParticles();
-    initNavbarScroll();
-    initMobileMenu();
-    initActiveLinkObserver();
+    // Inicializar cada uno de los módulos de interacción
+    initCanvasParticles(); // Partículas en movimiento
+    initNavbarScroll();    // Comportamiento de la barra superior al bajar scroll
+    initMobileMenu();      // Menú desplegable para teléfonos (hamburguesa)
+    initActiveLinkObserver(); // Detector de qué sección está visible en pantalla
 });
 
 /* ==========================================================================
-   1. CANVAS DE PARTÍCULAS DINÁMICAS (FONDO)
+   1. CANVAS DE PARTÍCULAS DINÁMICAS (Efecto del fondo marino)
    ========================================================================== */
 function initCanvasParticles() {
+    // Buscamos el elemento <canvas> del documento por su ID
     const canvas = document.getElementById('hero-canvas');
-    if (!canvas) return;
+    if (!canvas) return; // Si la página actual no tiene canvas, cancelamos la función
     
+    // Obtenemos el contexto en 2D que nos permite dibujar formas directamente en el lienzo
     const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    let animationId;
+    let particlesArray = []; // Aquí guardaremos todos los puntos creados
+    let animationId; // Variable para controlar el bucle de la animación
     
+    // Guardamos la posición del mouse del usuario para interactuar con las partículas
     const mouse = {
         x: null,
         y: null,
-        radius: 120
+        radius: 120 // Distancia (en píxeles) a la que el mouse empezará a empujar las partículas
     };
     
-    // Ajustar tamaño del canvas
+    // Ajustamos el tamaño del canvas para que ocupe todo el ancho y alto del navegador
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
     
+    // Si el usuario cambia el tamaño de la ventana (redimensionar), volvemos a ajustar el canvas
     window.addEventListener('resize', () => {
         resizeCanvas();
-        initParticles();
+        initParticles(); // Recrea las partículas para la nueva resolución
     });
     
+    // Guardamos las coordenadas del mouse cada vez que se mueve sobre la pantalla
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.clientX;
         mouse.y = event.clientY;
     });
     
+    // Si el mouse sale de la ventana del navegador, borramos las coordenadas
     window.addEventListener('mouseleave', () => {
         mouse.x = null;
         mouse.y = null;
     });
     
-    // Clase Partícula
+    // Definimos una clase (molde) 'Particle' para crear y controlar cada punto de luz flotante
     class Particle {
         constructor(x, y, directionX, directionY, size, color) {
-            this.x = x;
-            this.y = y;
-            this.directionX = directionX;
-            this.directionY = directionY;
-            this.size = size;
-            this.color = color;
-            this.originalX = x;
-            this.originalY = y;
+            this.x = x; // Posición actual en el eje X (horizontal)
+            this.y = y; // Posición actual en el eje Y (vertical)
+            this.directionX = directionX; // Velocidad y dirección en el eje X
+            this.directionY = directionY; // Velocidad y dirección en el eje Y
+            this.size = size; // Tamaño del radio del punto
+            this.color = color; // Color de la partícula
+            this.originalX = x; // Posición original en X (por si debe regresar tras ser empujada)
+            this.originalY = y; // Posición original en Y
         }
         
+        // Método para pintar la partícula en el lienzo (canvas)
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -199,19 +208,31 @@ function initMobileMenu() {
     
     if (!hamburger || !navMenu) return;
     
-    // Toggle menú
+    // Abrir/Cerrar menú al hacer clic en el botón hamburguesa
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        // Alternamos las clases visuales 'active'
+        const isOpen = hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        document.body.classList.toggle('overflow-hidden');
+        document.body.classList.toggle('overflow-hidden'); // Evita hacer scroll de fondo con el menú abierto
+        
+        // ACCESIBILIDAD: Actualizamos el estado 'aria-expanded' para que los lectores de pantalla
+        // informen al usuario ciego si el panel del menú está expandido o colapsado.
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        
+        // También actualizamos la etiqueta explicativa (aria-label) dinámicamente.
+        hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
     });
     
-    // Cerrar menú al hacer clic en un enlace
+    // Cerramos el menú de forma automática si el usuario hace clic en algún enlace del menú
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.classList.remove('overflow-hidden');
+            
+            // Restablecemos los atributos de accesibilidad al estado cerrado original
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
         });
     });
 }
