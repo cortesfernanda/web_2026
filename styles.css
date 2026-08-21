@@ -650,38 +650,50 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
+    opacity: 0; /* Oculta por defecto */
+    transform: scale(1.08); /* Ligeramente más grande para zoom-out suave en hover */
+    transition: opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .project-card-clean:hover .project-image-clean {
-    transform: scale(1.03);
+    opacity: 1; /* Se muestra con fundido suave */
+    transform: scale(1); /* Vuelve a su tamaño normal */
 }
 
-/* Jellyfish Keyframes */
+/* Jellyfish Morphing Keyframes (Líquidos & Orgánicos) */
 @keyframes jellyfish-morph-1 {
     0%, 100% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        border-radius: 60% 40% 40% 60% / 60% 45% 55% 40%;
     }
-    50% {
-        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    33% {
+        border-radius: 70% 50% 35% 65% / 50% 60% 40% 50%;
+    }
+    66% {
+        border-radius: 50% 70% 55% 45% / 65% 40% 60% 35%;
     }
 }
 
 @keyframes jellyfish-morph-2 {
     0%, 100% {
-        border-radius: 50% 50% 35% 65% / 55% 45% 55% 45%;
+        border-radius: 50% 70% 45% 55% / 55% 40% 60% 45%;
     }
-    50% {
-        border-radius: 65% 35% 50% 50% / 45% 55% 45% 55%;
+    33% {
+        border-radius: 65% 45% 50% 60% / 70% 50% 50% 30%;
+    }
+    66% {
+        border-radius: 40% 60% 65% 35% / 50% 65% 35% 50%;
     }
 }
 
 @keyframes jellyfish-morph-3 {
     0%, 100% {
-        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+        border-radius: 65% 45% 50% 60% / 60% 50% 50% 40%;
     }
-    50% {
-        border-radius: 55% 45% 35% 65% / 40% 60% 40% 60%;
+    33% {
+        border-radius: 45% 65% 60% 40% / 50% 60% 40% 50%;
+    }
+    66% {
+        border-radius: 70% 40% 35% 65% / 65% 35% 65% 35%;
     }
 }
 
@@ -996,6 +1008,13 @@ img {
         padding: 5rem 0;
     }
     
+    /* Evitar que el navbar fijo tape los títulos de páginas secundarias en celular */
+    .projects-section,
+    .about-section,
+    .contact-section {
+        padding-top: 8.5rem;
+    }
+    
     .hero-title {
         font-size: 2.8rem;
     }
@@ -1017,6 +1036,7 @@ img {
     
     .hamburger {
         display: flex;
+        z-index: 1010; /* Asegura estar por encima del menú desplegable */
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -1037,20 +1057,67 @@ img {
         left: -100%;
         top: 0;
         flex-direction: column;
-        background: rgba(9, 9, 14, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        /* Fondo de gradiente radial abisal más sólido para ocultar el fondo */
+        background: radial-gradient(circle at center, rgba(14, 43, 73, 0.985) 0%, rgba(6, 15, 30, 0.995) 100%);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         width: 100%;
         height: 100vh;
         justify-content: center;
-        gap: 2rem;
-        transition: 0.3s;
+        align-items: center;
+        gap: 2.5rem;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         z-index: 999;
+    }
+
+    /* Brillo bioluminiscente en el centro del menú móvil */
+    .nav-menu::before {
+        content: '';
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(144, 224, 239, 0.13) 0%, rgba(0, 180, 216, 0) 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: -1;
+        animation: menu-glow-pulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes menu-glow-pulse {
+        0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+        100% { transform: translate(-50%, -50%) scale(1.25); opacity: 1; }
     }
     
     .nav-menu.active {
         left: 0;
     }
+
+    /* Animación secuencial de los enlaces (estilo burbujas que suben al abrir el menú) */
+    .nav-menu .nav-item {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 1.6rem;
+        display: inline-block;
+        padding: 0.5rem 2rem;
+    }
+
+    .nav-menu.active .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.15s; }
+    .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.25s; }
+    .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.35s; }
+    .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.45s; }
     
     .projects-grid-clean {
         grid-template-columns: 1fr;
@@ -1195,60 +1262,37 @@ img {
     }
 }
 
-/* Corales decorativos en las esquinas inferiores */
-.decor-coral {
-    position: fixed;
-    bottom: -5px;
-    z-index: 1;
-    pointer-events: auto;
-    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.5s ease;
-    filter: drop-shadow(0 0 5px rgba(0, 180, 216, 0.2));
+/* ==========================================================================
+   NUEVOS EFECTOS INTERACTIVOS MARINOS (Destellos)
+   ========================================================================== */
+
+/* 2. Destello de Luz Marina en los Textos (Text Shimmer) */
+.water-shimmer-text {
+    background: linear-gradient(
+        120deg,
+        #ffffff 30%,
+        rgba(144, 224, 239, 0.9) 45%,
+        #ffffff 55%,
+        rgba(144, 224, 239, 0.9) 65%,
+        #ffffff 80%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textRefractionAnimation 5s linear infinite;
+    display: inline-block;
 }
 
-.decor-coral.bottom-right {
-    right: -5px;
-    width: 120px;
-    height: 180px;
-    transform-origin: bottom right;
-    animation: coral-idle-right 6s ease-in-out infinite alternate;
-}
-
-.decor-coral.bottom-left {
-    left: -5px;
-    width: 100px;
-    height: 150px;
-    transform-origin: bottom left;
-    animation: coral-idle-left 7s ease-in-out infinite alternate;
-}
-
-/* Balanceo interactivo al pasar el cursor (hover) */
-.decor-coral:hover {
-    filter: drop-shadow(0 0 15px rgba(144, 224, 239, 0.65));
-}
-
-.decor-coral.bottom-right:hover {
-    transform: rotate(-10deg) scale(1.05);
-}
-
-.decor-coral.bottom-left:hover {
-    transform: rotate(10deg) scale(1.05);
-}
-
-/* Movimiento lento y pasivo de corriente marina */
-@keyframes coral-idle-right {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-4deg); }
-}
-
-@keyframes coral-idle-left {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(4deg); }
-}
-
-/* Ocultar en dispositivos móviles para no sobrecargar el diseño */
-@media (max-width: 768px) {
-    .decor-coral {
-        display: none;
+@keyframes textRefractionAnimation {
+    0% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: -200% center;
     }
 }
+
+
+
 

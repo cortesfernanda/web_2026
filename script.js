@@ -223,6 +223,17 @@ function initMobileMenu() {
         hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
     });
     
+    // Cerrar el menú al hacer clic fuera de los enlaces (en el fondo del menú)
+    navMenu.addEventListener('click', (event) => {
+        if (event.target === navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
+        }
+    });
+
     // Cerramos el menú de forma automática si el usuario hace clic en algún enlace del menú
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -269,3 +280,5 @@ function initActiveLinkObserver() {
         observer.observe(section);
     });
 }
+
+
