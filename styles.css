@@ -606,12 +606,6 @@ img {
     transition: var(--transition-smooth);
 }
 
-/* Centrar el cuarto proyecto (TouchDesigner) en la segunda fila de la grilla de 3 columnas */
-@media (min-width: 769px) {
-    .project-card-clean:nth-child(4) {
-        grid-column: 2;
-    }
-}
 
 .project-image-wrapper-clean {
     position: relative;
@@ -635,9 +629,6 @@ img {
     animation: jellyfish-morph-3 18s ease-in-out infinite;
 }
 
-.project-card-clean:nth-child(4) .project-image-wrapper-clean {
-    animation: jellyfish-morph-1 14s ease-in-out infinite alternate; /* Desincronizado */
-}
 
 .project-card-clean:hover .project-image-wrapper-clean {
     transform: translateY(-8px) scale(1.02);
@@ -1014,9 +1005,10 @@ img {
     
     /* Evitar que el navbar fijo tape los títulos de páginas secundarias en celular */
     .projects-section,
+    .exercises-section,
     .about-section,
     .contact-section {
-        padding-top: 8.5rem;
+        padding-top: 9rem; /* Aumentado a 9rem para dar más aire respecto al menú fijo */
     }
     
     .hero-title {
@@ -1317,6 +1309,295 @@ img {
     }
 }
 
+/* ==========================================================================
+   SECCIÓN DE CÓDIGO CREATIVO Y EXPERIMENTOS
+   ========================================================================== */
+.experiments-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
 
+.experiment-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    overflow: hidden;
+    max-width: 360px; /* Reducido de 480px para que se vea más delicado e integrado */
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
 
+.experiment-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(144, 224, 239, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 180, 216, 0.18);
+}
 
+.experiment-image-wrapper {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #020a13;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.experiment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experiment-card:hover .experiment-image {
+    transform: scale(1.04);
+}
+
+/* Play Icon Overlay */
+.play-icon-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 10, 19, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.4s ease, background 0.4s ease;
+}
+
+.experiment-card:hover .play-icon-overlay {
+    opacity: 1;
+    background: rgba(3, 10, 19, 0.2);
+}
+
+.play-icon-overlay svg {
+    filter: drop-shadow(0 0 8px rgba(144, 224, 239, 0.5));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.experiment-card:hover .play-icon-overlay svg {
+    transform: scale(1.15);
+}
+
+.experiment-info {
+    padding: 1.5rem;
+}
+
+.experiment-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.experiment-title {
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-heading);
+}
+
+.experiment-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.experiment-title a:hover {
+    color: var(--primary);
+}
+
+.experiment-description {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.experiment-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.experiment-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   PÁGINA DE EJERCICIOS (Contenedor de Pestañas e Iframe Minimalista)
+   ========================================================================== */
+.tabs-control-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3.5rem auto 2.5rem;
+    position: relative;
+    max-width: 600px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-heading);
+    position: relative;
+    letter-spacing: 0.03em;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    color: var(--primary-light);
+    text-shadow: 0 0 10px rgba(144, 224, 239, 0.4);
+}
+
+/* Punto bioluminiscente debajo de la pestaña activa */
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-light);
+}
+
+.tab-divider {
+    color: rgba(255, 255, 255, 0.15);
+    font-weight: 300;
+    font-size: 1.1rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Contenido de las pestañas */
+.tabs-content-container {
+    margin-top: 1.5rem;
+}
+
+.tab-content {
+    display: none;
+    animation: tab-fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes tab-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exercise-info-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.exercise-info-header h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.exercise-intro-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+/* Contenedor Iframe Flotante y Sin Bordes Pesados */
+.exercise-preview-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: transparent; /* Permite ver el fondo estelar */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borde sumamente delgado y sutil */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35), 
+                0 0 50px rgba(0, 180, 216, 0.05); /* Brillo abisal flotante */
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.iframe-wrapper:hover {
+    border-color: rgba(144, 224, 239, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 
+                0 0 60px rgba(0, 180, 216, 0.12); /* Brillo bioluminiscente dinámico */
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: transparent;
+}
+
+.exercise-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Responsividad para los ejercicios minimalistas */
+@media (max-width: 768px) {
+    .tabs-control-container {
+        max-width: 100%;
+        gap: 0.8rem;
+        margin: 2.5rem auto 2rem;
+    }
+    
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.35rem 0;
+    }
+    
+    .tab-divider {
+        font-size: 0.95rem;
+    }
+    
+    .iframe-wrapper {
+        height: 420px; /* Tamaño ideal para teléfonos */
+        border-radius: 16px;
+    }
+}

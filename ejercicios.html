@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda Cortés — Trabajo en clases</title>
+    <!-- Google Fonts: Plus Jakarta Sans para cuerpo y Playfair Display para títulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Canvas de Fondo Bioluminiscente -->
+    <div id="hero-canvas-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <!-- Barra de Navegación Principal -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="nav-logo" aria-label="Fernanda Cortés - Volver al Inicio">
+                Fernanda Cortés
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link" id="link-inicio">Inicio</a></li>
+                <li class="nav-item"><a href="proyectos.html" class="nav-link" id="link-proyectos">Proyectos</a></li>
+                <li class="nav-item"><a href="ejercicios.html" class="nav-link active" id="link-ejercicios">Trabajo en clases</a></li>
+                <li class="nav-item"><a href="sobre-mi.html" class="nav-link" id="link-sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link btn-contact" id="link-contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botón de Menú Hamburguesa para móviles -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sección de Ejercicios con Pestañas Interactivas -->
+    <section id="ejercicios" class="exercises-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="title-icon-jelly" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12,2 C7.58,2 4,5.58 4,10 C4,10.5 4.5,11 5,11 C5.5,11 6,10.5 6,10 C6,6.69 8.69,4 12,4 C15.31,4 18,6.69 18,10 C18,10.5 18.5,11 19,11 C19.5,11 20,10.5 20,10 C20,5.58 16.42,2 12,2 Z" fill="currentColor"/>
+                        <path d="M12,11 C9.5,11 8.5,13 8.5,14 C8.5,15.5 10,16 10,17.5 C10,19 9,20 9,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12,11 C12,13 12,13.5 12,15 C12,16.5 13,17 13,18 C13,19 12,20 12,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12,11 C14.5,11 15.5,13 15.5,14 C15.5,15.5 14,16 14,17.5 C14,19 15,20 15,21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="water-shimmer-text">Trabajo en clases</span>
+                </h2>
+                <div class="header-line"></div>
+            </div>
+
+            <!-- Contenedores de Contenido (Solo Ejercicio 2) -->
+            <div class="tabs-content-container" style="margin-top: 3.5rem;">
+                <div class="tab-content active" id="ejercicio-2">
+                    <div class="exercise-info-header">
+                        <h3>Ejercicio 2</h3>
+                        <p class="exercise-intro-text">Ejercicio de estilos y diagramación básica:</p>
+                    </div>
+                    <div class="exercise-preview-card">
+                        <div class="iframe-wrapper">
+                            <iframe src="ejercicio2.html" title="Ejercicio 2" loading="lazy"></iframe>
+                        </div>
+                        <div class="exercise-actions">
+                            <a href="ejercicio2.html" target="_blank" class="btn btn-secondary">
+                                Abrir en pantalla completa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medusa Decorativa Interactiva (Cobalto) de Cierre -->
+            <div class="projects-decor-container" aria-hidden="true">
+                <div class="jellyfish-cobalt">
+                    <span class="tentacle t1"></span>
+                    <span class="tentacle t2"></span>
+                    <span class="tentacle t3"></span>
+                    <span class="tentacle t4"></span>
+                    <span class="tentacle t5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-minimal">
+                <p>&copy; 2026 Fernanda Cortés — Diseño.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

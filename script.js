@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarScroll();    // Comportamiento de la barra superior al bajar scroll
     initMobileMenu();      // Menú desplegable para teléfonos (hamburguesa)
     initActiveLinkObserver(); // Detector de qué sección está visible en pantalla
+    initExercisesTabs();   // Pestañas interactivas de la sección Ejercicios
 });
 
 /* ==========================================================================
@@ -278,6 +279,46 @@ function initActiveLinkObserver() {
     
     sections.forEach(section => {
         observer.observe(section);
+    });
+}
+
+/* ==========================================================================
+   5. PESTAÑAS (TABS) INTERACTIVAS EN EJERCICIOS
+   ========================================================================== */
+function initExercisesTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabButtons.length === 0 || tabContents.length === 0) return;
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            
+            // 1. Quitar estado activo de todos los botones y activarlo en el pulsado
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // 2. Ocultar todos los contenidos de pestaña y mostrar el seleccionado
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                
+                // OPTIMIZACIÓN: Pausar/recargar iframes no visibles para ahorrar memoria y CPU
+                const iframe = content.querySelector('iframe');
+                if (iframe) {
+                    // Si el iframe tiene un src, lo volvemos a asignar al seleccionarlo para asegurar carga fresca
+                    const originalSrc = iframe.getAttribute('src');
+                    if (content.getAttribute('id') === targetId) {
+                        iframe.setAttribute('src', originalSrc); 
+                    }
+                }
+            });
+            
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
     });
 }
 
