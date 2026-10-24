@@ -1,0 +1,308 @@
+/* ==========================================================================
+   HOJA DE ESTILOS - EJERCICIO 2 (DISE) - NORMA BEM
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ESTILOS GENERALES Y RESETEO
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc; /* Fondo gris claro neutral de la página */
+    color: #334155;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* BLOQUE: .dise-container (Contenedor blanco principal) */
+.dise-container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 3.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* --------------------------------------------------------------------------
+   BLOQUE: .dise-services (Sección superior)
+   -------------------------------------------------------------------------- */
+.dise-services {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+/* ELEMENTOS del bloque .dise-services */
+.dise-services__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dise-services__title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+/* ELEMENTO: __divider con MODIFICADOR: --orange */
+.dise-services__divider--orange {
+    width: 48px;
+    height: 4px;
+    background-color: #f59e0b; /* Color naranja de la imagen */
+    margin-top: 1.25rem;
+    margin-bottom: 1.75rem;
+    border-radius: 2px;
+}
+
+.dise-services__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 2.25rem;
+}
+
+.dise-services__description strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* ELEMENTO: __grid (Grilla de tarjetas) */
+.dise-services__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   BLOQUE: .service-card (Tarjetas individuales de servicios)
+   -------------------------------------------------------------------------- */
+.service-card {
+    background-color: #f1f5f9; /* Color gris claro de las tarjetas */
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 135px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* ELEMENTOS del bloque .service-card */
+.service-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.02em;
+}
+
+.service-card__title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.service-card__marker {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 1px;
+}
+
+/* MODIFICADORES para el marcador de tarjeta */
+.service-card__marker--blue {
+    background-color: #2563eb; /* Azul DISE */
+}
+
+/* --------------------------------------------------------------------------
+   BLOQUE: .dise-banner (Sección inferior)
+   -------------------------------------------------------------------------- */
+.dise-banner {
+    width: 100%;
+}
+
+/* ELEMENTOS del bloque .dise-banner */
+.dise-banner__card {
+    display: grid;
+    grid-template-columns: 1.15fr 1.35fr;
+    background-color: #111e2f; /* Fondo azul marino oscuro de la imagen */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.dise-banner__info {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dise-banner__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.03em;
+}
+
+.dise-banner__marker {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 1px;
+}
+
+/* MODIFICADOR de marcador cian */
+.dise-banner__marker--cyan {
+    background-color: #06b6d4;
+}
+
+.dise-banner__title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+/* ELEMENTO: __divider con MODIFICADOR: --blue */
+.dise-banner__divider--blue {
+    width: 32px;
+    height: 3px;
+    background-color: #38bdf8; /* Azul claro / cian de la imagen */
+    margin-bottom: 1.75rem;
+    border-radius: 1.5px;
+}
+
+.dise-banner__description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 2.25rem;
+}
+
+.dise-banner__image-container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    position: relative;
+}
+
+.dise-banner__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   BLOQUE INDEPENDIENTE Y REUTILIZABLE: .dise-btn (Botones)
+   -------------------------------------------------------------------------- */
+.dise-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.dise-btn:active {
+    transform: scale(0.98);
+}
+
+/* ELEMENTO del bloque .dise-btn */
+.dise-btn__icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+}
+
+/* MODIFICADORES del bloque .dise-btn */
+.dise-btn--orange {
+    background-color: #eab308;
+    color: #000000;
+}
+
+.dise-btn--orange:hover {
+    background-color: #ca8a04;
+}
+
+/* --------------------------------------------------------------------------
+   DISEÑO RESPONSIVO (Media Queries)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .dise-services {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .dise-banner__card {
+        grid-template-columns: 1fr;
+    }
+    
+    .dise-banner__image-container {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 1rem;
+    }
+    
+    .dise-container {
+        padding: 2rem;
+    }
+    
+    .dise-services__title {
+        font-size: 2rem;
+    }
+    
+    .dise-services__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dise-banner__info {
+        padding: 2.5rem 1.75rem;
+    }
+    
+    .dise-banner__title {
+        font-size: 1.75rem;
+    }
+}
