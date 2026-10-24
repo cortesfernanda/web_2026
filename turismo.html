@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo y Rutas Patrimoniales | Ilustre Municipalidad de Putaendo</title>
+    <meta name="description" content="Descubre Putaendo, Primer Pueblo Libre de Chile: Rutas temáticas del Cruce de Los Andes, Patrimonio Arquitectónico, Cultural y Religioso, y el Mapa Turístico Oficial.">
+    
+    <!-- Tipografía Proxima Nova -->
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.preconnect.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- =========================================================================
+         CABECERA INSTITUCIONAL
+         ========================================================================= -->
+    <header class="header" role="banner">
+        <div class="top-bar">
+            <div class="container top-bar-container">
+                <a href="index.html" class="brand-logo" aria-label="Ilustre Municipalidad de Putaendo - Inicio">
+                    <div class="brand-logo-content">
+                        <svg class="muni-shield" viewBox="0 0 54 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 16 L7 6 L14 6 L14 10 L22 10 L22 6 L32 6 L32 10 L40 10 L40 6 L47 6 L47 16 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+                            <path d="M5 18 H49 C49 42 42 58 27 66 C12 58 5 42 5 18 Z" fill="#3b6e72" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+                            <line x1="5" y1="36" x2="49" y2="36" stroke="#ffffff" stroke-width="1.8"/>
+                            <line x1="27" y1="18" x2="27" y2="65" stroke="#ffffff" stroke-width="1.8"/>
+                            <path d="M16 23 L17.2 26.5 L20.8 27.7 L17.2 28.9 L16 32.5 L14.8 28.9 L11.2 27.7 L14.8 26.5 Z" fill="#ffffff"/>
+                            <path d="M37.5 22 C37.5 26 35 30 37.5 34 C40 30 37.5 26 37.5 22 Z" fill="#ffffff"/>
+                            <circle cx="37.5" cy="28" r="1.5" fill="#3b6e72"/>
+                            <line x1="8" y1="52" x2="23" y2="37" stroke="#ffffff" stroke-width="2"/>
+                            <line x1="11" y1="58" x2="27" y2="43" stroke="#ffffff" stroke-width="2"/>
+                            <line x1="17" y1="62" x2="27" y2="52" stroke="#ffffff" stroke-width="2"/>
+                            <path d="M37.5 40 V54 M30.5 47 H44.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/>
+                            <circle cx="37.5" cy="47" r="2" fill="#ffffff"/>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">PUTAENDO</span>
+                            <span class="brand-sub">Ilustre Municipalidad</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="search-wrapper">
+                    <form class="search-form" role="search" onsubmit="event.preventDefault(); window.ejecutarBusqueda();">
+                        <label for="site-search" class="visually-hidden">Buscar</label>
+                        <input type="search" id="site-search" class="search-input" placeholder="Buscar..." autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div id="search-results-dropdown" class="search-results-dropdown" aria-live="polite"></div>
+                </div>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+            <div class="container">
+                <ul class="nav-list" id="nav-list">
+                    <!-- Dropdown 1: MUNICIPIO -->
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false" aria-haspopup="true">
+                            <span>MUNICIPIO</span>
+                            <i class="fa-solid fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="autoridades.html" class="dropdown-item">AUTORIDADES</a></li>
+                            <li><a href="index.html#organigrama" class="dropdown-item">ORGANIGRAMA</a></li>
+                            <li><a href="index.html#planificamos" class="dropdown-item">PLANIFICAMOS</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 2: TRÁMITES -->
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false" aria-haspopup="true">
+                            <span>TRÁMITES</span>
+                            <i class="fa-solid fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="permiso-circulacion.html" class="dropdown-item">PERMISO DE CIRCULACIÓN</a></li>
+                            <li><a href="index.html#tramite-solicitudes" class="dropdown-item">SOLICITUDES Y RECLAMOS</a></li>
+                            <li><a href="index.html#tramite-becas" class="dropdown-item">BECAS Y BENEFICIOS</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 3: COMUNA (ACTIVO) -->
+                    <li class="nav-item has-dropdown is-active-page">
+                        <button class="nav-btn-link active-link" aria-expanded="false" aria-haspopup="true">
+                            <span>COMUNA</span>
+                            <i class="fa-solid fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#historia" class="dropdown-item">HISTORIA Y PATRIMONIO</a></li>
+                            <li><a href="turismo.html" class="dropdown-item active-dropdown-item">ATRACTIVOS TURÍSTICOS</a></li>
+                            <li><a href="turismo.html#mapa-turistico" class="dropdown-item">MAPA COMUNAL</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 4: INFORMACIONES -->
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false" aria-haspopup="true">
+                            <span>INFORMACIONES</span>
+                            <i class="fa-solid fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="noticias.html" class="dropdown-item">NOTICIAS COMUNALES</a></li>
+                            <li><a href="index.html#avisos" class="dropdown-item">AVISOS Y EDICTOS</a></li>
+                            <li><a href="index.html#fondos" class="dropdown-item">FONDOS CONCURSABLES</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Enlace directo: PORTAL TRANSPARENCIA -->
+                    <li class="nav-item">
+                        <a href="https://www.portaltransparencia.cl" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-highlight">
+                            <span>PORTAL TRANSPARENCIA</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <!-- Dropdown 5: OTROS SITIOS -->
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false" aria-haspopup="true">
+                            <span>OTROS SITIOS</span>
+                            <i class="fa-solid fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="turismo.html" class="dropdown-item">PORTAL TURISMO</a></li>
+                            <li><a href="index.html#salud-portal" class="dropdown-item">DEPARTAMENTO DE SALUD</a></li>
+                            <li><a href="index.html#educacion-portal" class="dropdown-item">DEPARTAMENTO DE EDUCACIÓN</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =========================================================================
+         CONTENIDO PRINCIPAL: TURISMO
+         ========================================================================= -->
+    <main id="contenido-principal" class="main-content">
+
+        <!-- =====================================================================
+             1. BANNER HERO DE TURISMO (CUBRE TODA LA PANTALLA)
+             ===================================================================== -->
+        <section class="news-page-banner-section" aria-label="Cabecera Turismo">
+            <div class="news-page-banner-full">
+                <img src="assets/banner-noticias.png" alt="Turismo en Putaendo - Paisaje y Patrimonio" class="news-page-banner-img tourism-banner-img">
+                <div class="news-banner-overlay">
+                    <div class="news-banner-badge">
+                        <h1 class="news-banner-title">TURISMO</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             2. MIGA DE PAN (BREADCRUMB STRIP)
+             ===================================================================== -->
+        <nav class="breadcrumb-strip" aria-label="Ruta de navegación">
+            <div class="container breadcrumb-container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">INICIO</a></li>
+                    <li class="breadcrumb-separator" aria-hidden="true">&gt;</li>
+                    <li class="breadcrumb-item"><a href="index.html#comuna">COMUNA</a></li>
+                    <li class="breadcrumb-separator" aria-hidden="true">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">TURISMO</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- =====================================================================
+             3. SECCIÓN: CONOCE PUTAENDO (En Blanco)
+             ===================================================================== -->
+        <section class="tourism-intro-section" aria-labelledby="tourism-intro-title">
+            <div class="container">
+                <div class="tourism-intro-card">
+                    <h2 class="tourism-intro-title" id="tourism-intro-title">CONOCE PUTAENDO</h2>
+                    <p class="tourism-intro-text">
+                        Recorre la historia, el patrimonio, la cultura y la naturaleza de Putaendo mediante cuatro rutas temáticas que te llevarán por algunos de los lugares más emblemáticos de la comuna.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             4. SECCIÓN: 4 RUTAS TEMÁTICAS (Cards Horizontales en Fondo Blanco)
+             ===================================================================== -->
+        <section class="tourism-routes-section" id="rutas-tematicas" aria-labelledby="routes-main-title">
+            <div class="container">
+                <div class="routes-header-block">
+                    <h2 class="routes-section-title" id="routes-main-title">4 Rutas Temáticas</h2>
+                </div>
+
+                <div class="routes-list-container">
+                    <!-- Ruta 1: Cruce del Ejército Los Andes -->
+                    <article class="route-horizontal-card">
+                        <div class="route-card-media">
+                            <img src="assets/turismo/ruta-cruce-andes.png" alt="Ruta Cruce del Ejército Los Andes" class="route-card-img" loading="lazy">
+                        </div>
+                        <div class="route-card-body">
+                            <h3 class="route-card-title">Ruta Cruce del Ejército Los Andes</h3>
+                            <p class="route-card-desc">
+                                Sigue la épica huella del Ejército Libertador del General San Martín y Bernardo O'Higgins que ingresó a Chile por los pasos cordilleranos de Putaendo en 1817. Un recorrido por monumentos históricos, hitos heroicos y los impresionantes paisajes de la alta cordillera andina.
+                            </p>
+                            <button type="button" class="btn-read-more-route" onclick="abrirModalRuta('cruce-andes')">
+                                <span>Sigue leyendo</span>
+                                <span class="arrow-glyph" aria-hidden="true">&gt;</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Ruta 2: Patrimonio Arquitectónico -->
+                    <article class="route-horizontal-card">
+                        <div class="route-card-media">
+                            <img src="assets/turismo/ruta-arquitectura.png" alt="Ruta Patrimonio Arquitectónico" class="route-card-img" loading="lazy">
+                        </div>
+                        <div class="route-card-body">
+                            <h3 class="route-card-title">Ruta Patrimonio Arquitectónico</h3>
+                            <p class="route-card-desc">
+                                Admira la armonía colonial de la Zona Típica de Putaendo, destacando la emblemática Calle Comercio con su pavimento de piedras de río, fachadas continuas de adobe del siglo XVIII y XIX, portales tradicionales y el histórico Templo San Antonio de Padua.
+                            </p>
+                            <button type="button" class="btn-read-more-route" onclick="abrirModalRuta('patrimonio-arquitectura')">
+                                <span>Sigue leyendo</span>
+                                <span class="arrow-glyph" aria-hidden="true">&gt;</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Ruta 3: Ruta Cultural -->
+                    <article class="route-horizontal-card">
+                        <div class="route-card-media">
+                            <img src="assets/turismo/ruta-cultural.png" alt="Ruta Cultural" class="route-card-img" loading="lazy">
+                        </div>
+                        <div class="route-card-body">
+                            <h3 class="route-card-title">Ruta Cultural</h3>
+                            <p class="route-card-desc">
+                                Sumérgete en la identidad comunal visitando el Centro Cultural Bernardo Parra, museos locales, casas de creadores, talleres de artesanos en greda y madera, y las célebres festividades de la chilenidad, música folclórica y tradiciones campesinas.
+                            </p>
+                            <button type="button" class="btn-read-more-route" onclick="abrirModalRuta('cultural')">
+                                <span>Sigue leyendo</span>
+                                <span class="arrow-glyph" aria-hidden="true">&gt;</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Ruta 4: Ruta Religiosa -->
+                    <article class="route-horizontal-card">
+                        <div class="route-card-media">
+                            <img src="assets/turismo/ruta-religiosa.png" alt="Ruta Religiosa" class="route-card-img" loading="lazy">
+                        </div>
+                        <div class="route-card-body">
+                            <h3 class="route-card-title">Ruta Religiosa</h3>
+                            <p class="route-card-desc">
+                                Circuito espiritual y devocional que incluye el imponente Santuario del Cristo de Madera en Rinconada de Silva esculpido por Peter Horn, la Parroquia San Antonio de Padua, capillas coloniales del valle y tradicionales fiestas patronales.
+                            </p>
+                            <button type="button" class="btn-read-more-route" onclick="abrirModalRuta('religiosa')">
+                                <span>Sigue leyendo</span>
+                                <span class="arrow-glyph" aria-hidden="true">&gt;</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             5. SECCIÓN: MAPA TURÍSTICO (Fondo en Blanco)
+             ===================================================================== -->
+        <section class="tourism-map-section" id="mapa-turistico" aria-labelledby="map-section-title">
+            <div class="container">
+                <div class="map-section-header">
+                    <h2 class="tourism-map-title" id="map-section-title">MAPA TURÍSTICO</h2>
+                </div>
+
+                <div class="tourism-map-card">
+                    <div class="tourism-map-display" onclick="abrirModalMapa()" role="button" tabindex="0" aria-label="Ver mapa turístico ampliado">
+                        <img src="assets/turismo/mapa-turistico-putaendo.png" alt="Mapa Turístico Oficial de Putaendo con atractivos y circuitos" class="tourism-map-image">
+                        <div class="map-hover-hint">
+                            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+                            <span>Haz clic para ver en pantalla completa</span>
+                        </div>
+                    </div>
+
+                    <div class="tourism-map-footer">
+                        <div class="map-info-block">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <div>
+                                <strong>Oficina de Información Turística (OIT)</strong>
+                                <p>Plaza Prat s/n, Putaendo | Atención: Lunes a Domingo de 09:00 a 18:00 hrs | Fono: (34) 250 5600</p>
+                            </div>
+                        </div>
+                        <div class="map-actions-group">
+                            <button type="button" class="btn-map-action btn-map-zoom" onclick="abrirModalMapa()">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>Ver en Pantalla Completa</span>
+                            </button>
+                            <a href="assets/turismo/mapa-turistico-putaendo.png" download="Mapa-Turistico-Putaendo.png" class="btn-map-action btn-map-download">
+                                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                <span>Descargar Mapa (PNG)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================================
+         MODAL INTERACTIVO: DETALLE DE RUTAS TEMÁTICAS
+         ========================================================================= -->
+    <div id="modal-ruta" class="tourism-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-ruta-title" style="display: none;">
+        <div class="tourism-modal-card">
+            <button type="button" class="modal-close-btn" onclick="cerrarModalRuta()" aria-label="Cerrar ventana emergente">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="modal-media-header">
+                <img id="modal-ruta-img" src="" alt="" class="modal-route-img">
+                <div class="modal-badge-wrapper">
+                    <span id="modal-ruta-tag" class="modal-route-tag">RUTA TURÍSTICA</span>
+                </div>
+            </div>
+            <div class="modal-route-content">
+                <h3 id="modal-ruta-title" class="modal-route-title">Título de la Ruta</h3>
+                <p id="modal-ruta-desc" class="modal-route-desc">Descripción detallada de la ruta.</p>
+                
+                <div class="modal-hitos-block">
+                    <h4 class="modal-hitos-title"><i class="fa-solid fa-location-dot"></i> Principales Hitos y Atractivos</h4>
+                    <ul id="modal-ruta-hitos" class="modal-hitos-list">
+                        <!-- Generado dinámicamente con JavaScript -->
+                    </ul>
+                </div>
+
+                <div class="modal-tips-block">
+                    <h4 class="modal-tips-title"><i class="fa-solid fa-compass"></i> Consejos para tu Visita</h4>
+                    <p id="modal-ruta-tips" class="modal-tips-text">Recomendaciones prácticas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL INTERACTIVO: MAPA EN PANTALLA COMPLETA
+         ========================================================================= -->
+    <div id="modal-mapa" class="tourism-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-mapa-title" style="display: none;">
+        <div class="tourism-modal-card tourism-modal-map-view">
+            <button type="button" class="modal-close-btn" onclick="cerrarModalMapa()" aria-label="Cerrar vista de mapa">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="modal-map-header">
+                <h3 id="modal-mapa-title" class="modal-map-title">Mapa Turístico Oficial de Putaendo</h3>
+                <a href="assets/turismo/mapa-turistico-putaendo.png" download="Mapa-Turistico-Putaendo.png" class="btn-map-action btn-map-download">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i>
+                    <span>Descargar</span>
+                </a>
+            </div>
+            <div class="modal-map-body">
+                <img src="assets/turismo/mapa-turistico-putaendo.png" alt="Mapa Turístico Oficial de Putaendo en alta resolución" class="modal-full-map-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         PIE DE PÁGINA INSTITUCIONAL (Footer Verde Petróleo idéntico a index)
+         ========================================================================= -->
+    <!-- Boton flotante para subir del todo (lado izquierdo) -->
+    <button type="button" id="scroll-to-top-btn" class="scroll-to-top-btn" aria-label="Subir del todo" title="Subir del todo">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-container">
+            <!-- Bloque 1: Escudo y Nombre Municipal -->
+            <div class="footer-col footer-col-brand">
+                <div class="footer-logo">
+                    <!-- Escudo Vectorial en blanco -->
+                    <svg class="footer-shield" viewBox="0 0 54 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 16 L7 6 L14 6 L14 10 L22 10 L22 6 L32 6 L32 10 L40 10 L40 6 L47 6 L47 16 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+                        <path d="M5 18 H49 C49 42 42 58 27 66 C12 58 5 42 5 18 Z" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+                        <line x1="5" y1="36" x2="49" y2="36" stroke="#ffffff" stroke-width="1.8"/>
+                        <line x1="27" y1="18" x2="27" y2="65" stroke="#ffffff" stroke-width="1.8"/>
+                        <path d="M16 23 L17.2 26.5 L20.8 27.7 L17.2 28.9 L16 32.5 L14.8 28.9 L11.2 27.7 L14.8 26.5 Z" fill="#ffffff"/>
+                        <path d="M37.5 22 C37.5 26 35 30 37.5 34 C40 30 37.5 26 37.5 22 Z" fill="#ffffff"/>
+                        <circle cx="37.5" cy="28" r="1.5" fill="#2d5e62"/>
+                        <line x1="8" y1="52" x2="23" y2="37" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="11" y1="58" x2="27" y2="43" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="17" y1="62" x2="27" y2="52" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M37.5 40 V54 M30.5 47 H44.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/>
+                        <circle cx="37.5" cy="47" r="2" fill="#ffffff"/>
+                    </svg>
+                    <div class="footer-brand-text">
+                        <span class="footer-title">PUTAENDO</span>
+                        <span class="footer-subtitle">Ilustre Municipalidad</span>
+                    </div>
+                </div>
+                <p class="footer-motto">Primer Pueblo Libre de Chile · Región de Valparaíso</p>
+            </div>
+
+            <!-- Bloque 2: Información de Contacto Oficial -->
+            <div class="footer-col footer-col-contact">
+                <h4 class="footer-col-title">Contacto</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>Fono Alcaldía: <strong>(34) 243 1552</strong></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>alcaldia@muniputaendo.cl</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>Prat 1, Putaendo, Valparaíso, Chile</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Bloque 3: Redes Sociales -->
+            <div class="footer-col footer-col-social">
+                <h4 class="footer-col-title">Redes Sociales</h4>
+                <div class="social-links-grid">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook Ilustre Municipalidad de Putaendo">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram Ilustre Municipalidad de Putaendo">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube Ilustre Municipalidad de Putaendo">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter) Ilustre Municipalidad de Putaendo">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra inferior de Copyright y Enlaces Legales -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Ilustre Municipalidad de Putaendo. Todos los derechos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="https://www.portaltransparencia.cl" target="_blank" rel="noopener noreferrer">Transparencia Activa</a>
+                    <span>·</span>
+                    <a href="#privacidad">Políticas de Privacidad</a>
+                    <span>·</span>
+                    <a href="#accesibilidad">Accesibilidad Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concursos Públicos: Profesionales, Jefaturas y Auxiliares | Ilustre Municipalidad de Putaendo</title>
+    <meta name="description" content="Concursos públicos de antecedentes para proveer cargos de Encargado/a de Cultura, Jefe/a de Personal y Auxiliar en la Municipalidad de Putaendo.">
+    
+    <!-- Tipografía Proxima Nova -->
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.preconnect.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera Institucional -->
+    <header class="header" role="banner">
+        <div class="top-bar">
+            <div class="container top-bar-container">
+                <a href="index.html" class="brand-logo" aria-label="Ilustre Municipalidad de Putaendo - Inicio">
+                    <div class="brand-logo-content">
+                        <svg class="muni-shield" viewBox="0 0 54 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 16 L7 6 L14 6 L14 10 L22 10 L22 6 L32 6 L32 10 L40 10 L40 6 L47 6 L47 16 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+                            <path d="M5 18 H49 C49 42 42 58 27 66 C12 58 5 42 5 18 Z" fill="#3b6e72" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+                            <line x1="5" y1="36" x2="49" y2="36" stroke="#ffffff" stroke-width="1.8"/>
+                            <line x1="27" y1="18" x2="27" y2="65" stroke="#ffffff" stroke-width="1.8"/>
+                            <path d="M16 23 L17.2 26.5 L20.8 27.7 L17.2 28.9 L16 32.5 L14.8 28.9 L11.2 27.7 L14.8 26.5 Z" fill="#ffffff"/>
+                            <path d="M37.5 22 C37.5 26 35 30 37.5 34 C40 30 37.5 26 37.5 22 Z" fill="#ffffff"/>
+                            <circle cx="37.5" cy="28" r="1.5" fill="#3b6e72"/>
+                            <line x1="8" y1="52" x2="23" y2="37" stroke="#ffffff" stroke-width="2"/>
+                            <line x1="11" y1="58" x2="27" y2="43" stroke="#ffffff" stroke-width="2"/>
+                            <line x1="17" y1="62" x2="27" y2="52" stroke="#ffffff" stroke-width="2"/>
+                            <path d="M37.5 40 V54 M30.5 47 H44.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/>
+                            <circle cx="37.5" cy="47" r="2" fill="#ffffff"/>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">PUTAENDO</span>
+                            <span class="brand-sub">Ilustre Municipalidad</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="search-wrapper">
+                    <form class="search-form" role="search" onsubmit="event.preventDefault(); window.ejecutarBusqueda();">
+                        <label for="site-search" class="visually-hidden">Buscar</label>
+                        <input type="search" id="site-search" class="search-input" placeholder="Buscar..." autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div id="search-results-dropdown" class="search-results-dropdown" aria-live="polite"></div>
+                </div>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+            <div class="container">
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false"><span>MUNICIPIO</span> <i class="fa-solid fa-caret-down dropdown-arrow"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#alcalde" class="dropdown-item">AUTORIDADES</a></li>
+                            <li><a href="index.html#organigrama" class="dropdown-item">ORGANIGRAMA</a></li>
+                            <li><a href="index.html#planificamos" class="dropdown-item">PLANIFICAMOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false"><span>TRÁMITES</span> <i class="fa-solid fa-caret-down dropdown-arrow"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#tramite-pagos" class="dropdown-item">PAGOS ONLINE</a></li>
+                            <li><a href="index.html#tramite-solicitudes" class="dropdown-item">SOLICITUDES Y RECLAMOS</a></li>
+                            <li><a href="index.html#tramite-becas" class="dropdown-item">BECAS Y BENEFICIOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false"><span>COMUNA</span> <i class="fa-solid fa-caret-down dropdown-arrow"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#historia" class="dropdown-item">HISTORIA Y PATRIMONIO</a></li>
+                            <li><a href="turismo.html" class="dropdown-item">ATRACTIVOS TURÍSTICOS</a></li>
+                            <li><a href="index.html#mapa" class="dropdown-item">MAPA COMUNAL</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown is-active-page">
+                        <button class="nav-btn-link active-link" aria-expanded="false"><span>INFORMACIONES</span> <i class="fa-solid fa-caret-down dropdown-arrow"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="noticias.html" class="dropdown-item active-dropdown-item">NOTICIAS COMUNALES</a></li>
+                            <li><a href="index.html#avisos" class="dropdown-item">AVISOS Y EDICTOS</a></li>
+                            <li><a href="index.html#fondos" class="dropdown-item">FONDOS CONCURSABLES</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.portaltransparencia.cl" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-highlight">
+                            <span>PORTAL TRANSPARENCIA</span> <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button class="nav-btn-link" aria-expanded="false"><span>OTROS SITIOS</span> <i class="fa-solid fa-caret-down dropdown-arrow"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="turismo.html" class="dropdown-item">PORTAL TURISMO</a></li>
+                            <li><a href="index.html#salud-portal" class="dropdown-item">DEPARTAMENTO DE SALUD</a></li>
+                            <li><a href="index.html#educacion-portal" class="dropdown-item">DEPARTAMENTO DE EDUCACIÓN</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido del Artículo -->
+    <main id="contenido-principal" class="article-detail-section">
+        <div class="container">
+            <article class="article-container">
+                <!-- Migas de Pan -->
+                <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="noticias.html">Noticias</a>
+                    <span>/</span>
+                    <span>Concursos Públicos</span>
+                </nav>
+
+                <!-- Cabecera de la Noticia -->
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-badge">Concursos Públicos · Convocatoria 2026</span>
+                        <time class="article-date" datetime="2026-07-27">
+                            <i class="fa-regular fa-calendar" aria-hidden="true"></i> 27 de Julio, 2026
+                        </time>
+                    </div>
+                    <h1 class="article-title">
+                        Concursos Públicos: Encargado de Cultura, Turismo y Patrimonio – Jefe de Personal – Auxiliar
+                    </h1>
+                </header>
+
+                <!-- Imagen Destacada -->
+                <div class="article-media-box">
+                    <img src="assets/slide3-patrimonio.png" alt="Concursos Públicos Municipalidad de Putaendo" class="article-img">
+                </div>
+
+                <!-- Cuerpo del Artículo -->
+                <div class="article-content">
+                    <p>
+                        La <strong>Ilustre Municipalidad de Putaendo</strong> convoca a concurso público de antecedentes para proveer en calidad de titulares los cargos vacantes de la planta municipal que a continuación se individualizan, de conformidad a lo establecido en la <em>Ley N° 18.883</em>, Estatuto Administrativo para Funcionarios Municipales.
+                    </p>
+
+                    <h3>Cargos Convocados</h3>
+                    <ul>
+                        <li>
+                            <strong>1. Encargado/a de Cultura, Turismo y Patrimonio:</strong>
+                            <br>Planta Profesionales, Grado 10° E.U.M. Título profesional otorgado por un establecimiento de Educación Superior del Estado o reconocido por este, de a lo menos 8 semestres de duración.
+                        </li>
+                        <li>
+                            <strong>2. Jefatura de Personal:</strong>
+                            <br>Planta Jefaturas, Grado 11° E.U.M. Título profesional o técnico con experiencia acreditada en gestión de personas y normativa del sector público municipal.
+                        </li>
+                        <li>
+                            <strong>3. Auxiliar de Servicios Generales:</strong>
+                            <br>Planta Auxiliares, Grado 18° E.U.M. Licencia de Educación Media y experiencia en mantenimiento e instalaciones.
+                        </li>
+                    </ul>
+
+                    <h3>Requisitos de Postulación</h3>
+                    <p>
+                        Los y las postulantes deberán acreditar el cumplimiento de los requisitos generales de ingreso a la administración pública contemplados en el artículo 10 y 11 de la Ley N° 18.883, así como no hallarse inhabilitados en virtud del artículo 54 y 56 del DFL 1/19.653.
+                    </p>
+                    <p>
+                        La entrega de postulaciones debe realizarse en <strong>Oficina de Partes</strong> de la Ilustre Municipalidad de Putaendo, ubicada en <strong>Prat N° 1, Putaendo</strong>, dentro de los plazos establecidos en el cronograma oficial de las bases.
+                    </p>
+
+                    <h3>Documentos y Bases Oficiales</h3>
+                    <p>
+                        A continuación puede descargar las bases completas, perfil del cargo, pautas de evaluación y decretos asociados:
+                    </p>
+
+                    <!-- Descarga 1: Bases Generales -->
+                    <div class="article-download-card">
+                        <div class="download-info">
+                            <i class="fa-solid fa-file-pdf download-icon" aria-hidden="true"></i>
+                            <div>
+                                <div class="download-title">Bases Oficiales Concurso Público 2026</div>
+                                <div class="download-sub">Bases técnicas, requisitos, ponderaciones y cronograma de postulación (PDF)</div>
+                            </div>
+                        </div>
+                        <a href="https://www.putaendo.cl/wp-content/uploads/2026/07/BASES_CONCURSO_PUBLICO_2026_Municipalidad_Putaendo-27.07.2026.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Descargar Bases</span>
+                        </a>
+                    </div>
+
+                    <!-- Descarga 2: Rectificación de Bases -->
+                    <div class="article-download-card">
+                        <div class="download-info">
+                            <i class="fa-solid fa-file-shield download-icon" aria-hidden="true"></i>
+                            <div>
+                                <div class="download-title">Decreto Alcaldicio Rectificación de Bases</div>
+                                <div class="download-sub">Documento oficial rectificatorio del proceso de selección (PDF)</div>
+                            </div>
+                        </div>
+                        <a href="https://www.putaendo.cl/wp-content/uploads/2026/08/CCF_000512-1.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Descargar Decreto</span>
+                        </a>
+                    </div>
+
+                    <p>
+                        Cualquier consulta formal relativa al proceso de postulación debe ser remitida a la comisión evaluadora conforme a lo estipulado en las bases oficiales.
+                    </p>
+                </div>
+
+                <!-- Barra de Navegación Inferior -->
+                <footer class="article-footer-nav">
+                    <a href="noticias.html" class="btn-back-news">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Volver a Noticias</span>
+                    </a>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-logo">
+                    <svg class="footer-shield" viewBox="0 0 54 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 16 L7 6 L14 6 L14 10 L22 10 L22 6 L32 6 L32 10 L40 10 L40 6 L47 6 L47 16 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+                        <path d="M5 18 H49 C49 42 42 58 27 66 C12 58 5 42 5 18 Z" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+                        <line x1="5" y1="36" x2="49" y2="36" stroke="#ffffff" stroke-width="1.8"/>
+                        <line x1="27" y1="18" x2="27" y2="65" stroke="#ffffff" stroke-width="1.8"/>
+                        <path d="M16 23 L17.2 26.5 L20.8 27.7 L17.2 28.9 L16 32.5 L14.8 28.9 L11.2 27.7 L14.8 26.5 Z" fill="#ffffff"/>
+                        <path d="M37.5 22 C37.5 26 35 30 37.5 34 C40 30 37.5 26 37.5 22 Z" fill="#ffffff"/>
+                        <circle cx="37.5" cy="28" r="1.5" fill="#2d5e62"/>
+                        <line x1="8" y1="52" x2="23" y2="37" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="11" y1="58" x2="27" y2="43" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="17" y1="62" x2="27" y2="52" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M37.5 40 V54 M30.5 47 H44.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/>
+                        <circle cx="37.5" cy="47" r="2" fill="#ffffff"/>
+                    </svg>
+                    <div class="footer-brand-text">
+                        <span class="footer-title">PUTAENDO</span>
+                        <span class="footer-subtitle">Ilustre Municipalidad</span>
+                    </div>
+                </div>
+                <p class="footer-motto">Primer Pueblo Libre de Chile · Región de Valparaíso</p>
+            </div>
+
+            <div class="footer-col footer-col-contact">
+                <h4 class="footer-col-title">Contacto</h4>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-phone"></i> <span>Fono Alcaldía: <strong>(34) 243 1552</strong></span></li>
+                    <li><i class="fa-solid fa-envelope"></i> <span>alcaldia@muniputaendo.cl</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>Prat 1, Putaendo, Valparaíso, Chile</span></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-social">
+                <h4 class="footer-col-title">Redes Sociales</h4>
+                <div class="social-links-grid">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Ilustre Municipalidad de Putaendo. Todos los derechos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="https://www.portaltransparencia.cl" target="_blank" rel="noopener noreferrer">Transparencia Activa</a>
+                    <span>·</span>
+                    <a href="#privacidad">Políticas de Privacidad</a>
+                    <span>·</span>
+                    <a href="#accesibilidad">Accesibilidad Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
